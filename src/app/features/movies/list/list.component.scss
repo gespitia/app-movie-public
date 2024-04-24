@@ -1,0 +1,14 @@
+:host{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.img{
+    width: 200px;
+}
+.movie-card{
+  width: 200px;
+  text-align: center;
+}

@@ -1,0 +1,95 @@
+.sidenav-container {
+  height: 100%;
+  color: white;
+  .mat-sidenav {
+    width: 200px;
+  }
+  .mat-nav-list a{
+    text-decoration: none;
+    margin: 8px 0;
+    display: block;
+    padding: 10px;
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .background-header{
+    width: 100%;
+  }
+
+  mat-toolbar{
+    position: fixed;
+  }
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+  }
+}
+
+.logo{
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+.active{
+  color:white;
+}
+
+.search-bar {
+  flex: 1;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.desktop-menu{
+  text-align: end;
+}
+
+.desktop-menu a{
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  button{
+    display: none;
+  }
+
+  .desktop-menu a{
+    display: block;
+  }
+
+  .sidenav-container {
+    .mat-sidenav-content {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu-button {
+          display: none; // Oculta el botón del menú hamburguesa
+        }
+        .app-title {
+          flex-grow: 1;
+        }
+        nav {
+          display: flex;
+          align-items: center;
+          a {
+            margin: 0 10px;
+            padding: 10px 0;
+            &:hover {
+              background: none;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
