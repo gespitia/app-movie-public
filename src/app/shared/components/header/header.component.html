@@ -1,39 +1,26 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" opened="false">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" position="end">
+    <!-- Contenido del menú hamburguesa -->
     <mat-nav-list>
-      <a mat-list-item routerLink="/estrenos">Próximos Estrenos</a>
-      <a mat-list-item routerLink="/populares">Más Populares</a>
-      <a mat-list-item routerLink="/recomendadas">Recomendadas</a>
-      <!-- Agrega más opciones aquí si es necesario -->
+      <a mat-list-item [routerLink]="['/home']">Home</a>
+      <a mat-list-item [routerLink]="['/ruta2']">Item 2</a>
+      <!-- más items -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-      <mat-toolbar color="primary">
-      <header>
-        <button mat-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <img
-          src="../../../../assets/logo/app-movie.png"
-          alt="Logo de la App de Películas"
-          class="logo"
-        />
-        <mat-form-field appearance="fill" class="search-bar">
-          <mat-label>Buscar películas</mat-label>
-          <input matInput placeholder="Título, actores, directores..." />
-          <button mat-icon-button matSuffix>
-            <mat-icon>search</mat-icon>
-          </button>
-        </mat-form-field>
-        <nav class="desktop-menu">
-          <a mat-list-item routerLink="/estrenos" [routerLinkActive]="['active']">Próximos Estrenos</a>
-          <a mat-list-item routerLink="/populares" [routerLinkActive]="['active']">Más Populares</a>
-          <a mat-list-item routerLink="/recomendadas" [routerLinkActive]="['active']">Recomendadas</a>
-          <!-- Agrega más enlaces aquí si es necesario -->
-        </nav>
-      </header>
-      <!-- Contenido principal aquí -->
+    <mat-toolbar color="primary">
+      <button class="button" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- Contenido del menú horizontal -->
+      <span>Logo</span>
+      <span class="spacer"></span>
+      <div class="menu-items">
+        <a mat-button [routerLink]="['/home']">Home</a>
+        <a mat-button [routerLink]="['/ruta2']">Item 2</a>
+        <!-- más items -->
+      </div>
     </mat-toolbar>
-    <img class="background-header" src="https://t1.uc.ltmcdn.com/es/posts/3/8/3/las_mejores_sagas_de_peliculas_53383_600.jpg" alt="">
-    </mat-sidenav-content>
+    <ng-content select="router-outlet"></ng-content>
+  </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,16 +1,26 @@
-import { Component, input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { Movie } from '../../../core/models/movie.models';
+import { MovieInterface } from '../../../core/models/movie.models';
+import { RouterLink } from '@angular/router';
+import { ListMoviesService } from '../../services/list-movies.service';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, RouterLink],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent {
+export class ListComponent implements OnInit{
 
-  movies = input<Movie[]>();
+  constructor(private listMovieService:ListMoviesService) { }
+
+  movies: MovieInterface[]=[];
+
+  ngOnInit() {
+    this.listMovieService.peliculas.subscribe((data) => {
+      this.movies = data;
+    })
+  }
 
 }

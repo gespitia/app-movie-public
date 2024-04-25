@@ -1,1 +1,17 @@
-<p>movie-detail works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ movieDetail.title }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="'https://image.tmdb.org/t/p/w220_and_h330_face' + movieDetail.backdrop_path"
+    [alt]="movieDetail.original_title"
+  />
+  <mat-card-content>
+    <p>{{ movieDetail.overview }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="accent">VER TRÁILER</button>
+    <button mat-flat-button color="primary">VER PELICULA</button>
+  </mat-card-actions>
+</mat-card>

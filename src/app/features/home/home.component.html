@@ -1,8 +1,12 @@
-<app-list [movies]="currentPageMovies"></app-list>
+<mat-form-field class="example-full-width">
+  <mat-label>Search</mat-label>
+  <input #searchControl (keyup)="onSearchChange(searchControl.value)" matInput>
+</mat-form-field>
+<app-list></app-list>
 <mat-paginator #paginator
                [length]="allMovies.total_results"
                [pageSize]="20"
-               [pageSizeOptions]="[5, 10, 20, 50]"
-               (page)="requestMoviesPage()">
+               [pageSizeOptions]="[20]"
+               (page)="onPageChange()">
 </mat-paginator>
 
