@@ -6,7 +6,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink, RouterLinkActive } from '@angular/router';;
+import { RouterLink, RouterLinkActive } from '@angular/router';import { FooterComponent } from '../footer/footer.component';
+;
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';;
     MatInputModule,
     MatToolbarModule,
     RouterLink,
-    RouterLinkActive,
+    RouterLinkActive
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

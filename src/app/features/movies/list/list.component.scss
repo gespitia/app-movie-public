@@ -1,8 +1,11 @@
 :host{
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 10px;
   justify-content: space-around;
+  background-color: black;
 }
 .imagen{
     width: 200px;
@@ -10,4 +13,7 @@
 .movie-card{
   width: 200px;
   text-align: center;
+}
+p{
+  font-size: 10px;
 }

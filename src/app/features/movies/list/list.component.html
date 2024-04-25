@@ -1,5 +1,6 @@
 @for (item of movies; track $index) {
 <mat-card class="movie-card" [routerLink]="['/movie', item.id]" routerLinkActive="router-link-active">
+  <p>{{item.title}}</p>
   <mat-card-header>
     <mat-card-subtitle>{{ item.release_date }}</mat-card-subtitle>
   </mat-card-header>

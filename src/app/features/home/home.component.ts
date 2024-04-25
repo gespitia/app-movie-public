@@ -7,7 +7,6 @@ import {
   MatPaginator,
   MatPaginatorIntl,
   MatPaginatorModule,
-  PageEvent,
 } from '@angular/material/paginator';
 import {
   MovieInterface,

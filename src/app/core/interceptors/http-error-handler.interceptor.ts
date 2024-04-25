@@ -3,9 +3,10 @@ import { inject } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { DialogService } from '../../shared/services/dialog.service';
+import { ErrorRespnseInterface } from '../models/error-response.models';
 
 export const httpErrorHandlerInterceptor: HttpInterceptorFn = (req, next): Observable<HttpEvent<any>> => {
-  const dialogService=inject(DialogService);
+  const dialogService = inject(DialogService);
   return next(req).pipe(
     catchError((error) => {
       if (error.status >= 400 && error.status <= 499) {
@@ -19,12 +20,12 @@ export const httpErrorHandlerInterceptor: HttpInterceptorFn = (req, next): Obser
   );
 };
 
-const handleClientErrors = (error: any, dialogService:DialogService) => {
+const handleClientErrors = (error: ErrorRespnseInterface, dialogService:DialogService) => {
   dialogService.openDialog(error);
   return throwError(() => new Error(`Error de cliente: ${error.status}`));
 };
 
-const handleServerErrors = (error: any, dialogService:DialogService) => {
+const handleServerErrors = (error: ErrorRespnseInterface, dialogService:DialogService) => {
   dialogService.openDialog(error);
   return throwError(() => new Error(`Error de servidor: ${error.status}`));
 };

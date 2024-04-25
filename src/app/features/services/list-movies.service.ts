@@ -7,13 +7,13 @@ import { MovieInterface } from '../../core/models/movie.models';
 })
 export class ListMoviesService {
 
-  private peliculasSource = new BehaviorSubject<MovieInterface[]>([]);
-  peliculas = this.peliculasSource.asObservable();
+  private moviesSource = new BehaviorSubject<MovieInterface[]>([]);
+  peliculas = this.moviesSource.asObservable();
 
   constructor() { }
 
   cargarPeliculas(datosCargados: MovieInterface[]) {
-    this.peliculasSource.next(datosCargados);
+    this.moviesSource.next(datosCargados);
   }
 
 }
