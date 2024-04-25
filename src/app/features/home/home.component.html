@@ -1,6 +1,6 @@
 <app-list [movies]="currentPageMovies"></app-list>
 <mat-paginator #paginator
-               [length]="allMovies?.total_results"
+               [length]="allMovies.total_results"
                [pageSize]="20"
                [pageSizeOptions]="[5, 10, 20, 50]"
                (page)="requestMoviesPage()">

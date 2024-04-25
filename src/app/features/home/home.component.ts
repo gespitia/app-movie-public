@@ -1,4 +1,4 @@
-import { Component, computed, Injectable, ViewChild } from '@angular/core';
+import { Component, Injectable, ViewChild } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ListComponent } from '../movies/list/list.component';
 import { MovieService } from '../../core/services/movie.service';
@@ -40,7 +40,7 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  public allMovies!: MovieResponse;
+  public allMovies: MovieResponse= {} as MovieResponse;
   public currentPageMovies: Movie[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
