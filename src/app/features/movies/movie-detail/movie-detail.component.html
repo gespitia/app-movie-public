@@ -13,6 +13,15 @@
       </mat-card-header>
       <mat-card-content>
         <span>{{ movieDetail.overview }}</span>
+        <h3>Production:</h3>
+        <ul>
+          @for(item of movieDetail.production_companies; track $index) {
+            <li>
+              <img [src]="'https://image.tmdb.org/t/p/w220_and_h330_face'+item.logo_path" alt="">
+              <p>{{item.name}}</p>
+            </li>
+          }
+        </ul>
       </mat-card-content>
       <mat-card-actions>
         <button mat-flat-button color="accent">LOOK MOVIE</button>

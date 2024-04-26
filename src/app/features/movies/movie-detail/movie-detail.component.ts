@@ -23,6 +23,7 @@ export class MovieDetailComponent {
   ngOnInit() {
     this.movieService.getMovieDetail(this.movieId).subscribe((data) => {
       this.movieDetail = data;
+      console.log(this.movieDetail);
     });
   }
 }
