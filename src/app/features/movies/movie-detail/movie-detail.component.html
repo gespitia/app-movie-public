@@ -17,7 +17,6 @@
         <ul>
           @for(item of movieDetail.production_companies; track $index) {
             <li>
-              <img [src]="'https://image.tmdb.org/t/p/w220_and_h330_face'+item.logo_path" alt="">
               <p>{{item.name}}</p>
             </li>
           }

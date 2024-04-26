@@ -6,7 +6,7 @@
     display: grid;
     gap: 1rem;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
     .card-image{
       img{
         width: 100%;
@@ -14,15 +14,18 @@
       }
     }
     .card-content ul{
-      width: 100%;
+      // display: grid;
+      // gap:5px;
+      // grid-template-columns: auto;
+      // grid-template-columns: 1fr 1fr;
+      // width: 100%;
       text-align: left;
       li{
         margin-left: 0;
         list-style: none;
-        margin-bottom: 1rem;
+        margin-bottom: 5px;
         img{
           width: 100%;
-          max-width: 100px;
         }
         span{
           font-weight: bold;
