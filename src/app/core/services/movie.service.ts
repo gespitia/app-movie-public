@@ -37,9 +37,9 @@ export class MovieService {
     });
   }
 
-  getCategorieMovie(): Observable<any> {
-    const params = this.getHttpParams({ language: 'es-ES' });
-    return this._http.get(`${this.baseUrl}/genre/movie/list`, { params });
+  getMovieVideo(id:string): Observable<any> {
+    const params = this.getHttpParams();
+    return this._http.get(`${this.baseUrl}/movie/${id}/videos`, { params });
   }
 
   searchMovie(

@@ -11,10 +11,13 @@ import { MovieService } from '../../../core/services/movie.service';
 export class ReproductorComponent {
   @Input('id') videoSrc!: string;
 
-  // constructor(private movieService:MovieService) {
-  //   this.movieService.getMovieVideo(this.videoSrc).subscribe((data) => {
-  //     console.log(data);
-  //   });
-  // }
+  video: any;
+
+  constructor(private movieService:MovieService) {
+    this.movieService.getMovieVideo(this.videoSrc).subscribe((data) => {
+      this.video = data.results[0];
+      console.log(this.video);
+    });
+  }
 
 }
