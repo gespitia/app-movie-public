@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { routes as MovieRoutes } from '../app/features/movies/movie.routes';
 
 export const routes: Routes = [
   {
@@ -7,11 +8,8 @@ export const routes: Routes = [
       import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'movie/:id',
-    loadComponent: () =>
-      import('./features/movies/movie-detail/movie-detail.component').then(
-        (m) => m.MovieDetailComponent
-      )
+    path: 'movies',
+    children: MovieRoutes,
   },
   {
     path: '**',

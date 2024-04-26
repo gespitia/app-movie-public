@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MovieService } from '../../../core/services/movie.service';
 
 @Component({
   selector: 'app-reproductor',
@@ -8,8 +9,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './reproductor.component.scss'
 })
 export class ReproductorComponent {
-  @Input() videoSrc!: string;
+  @Input('id') videoSrc!: string;
 
-  constructor() { }
+  // constructor(private movieService:MovieService) {
+  //   this.movieService.getMovieVideo(this.videoSrc).subscribe((data) => {
+  //     console.log(data);
+  //   });
+  // }
 
 }

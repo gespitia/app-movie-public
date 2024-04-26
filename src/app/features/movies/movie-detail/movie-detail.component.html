@@ -23,7 +23,7 @@
         </ul>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="accent">LOOK MOVIE</button>
+        <a mat-flat-button [routerLink]="['/movies/reproductor', movieId]" color="accent">LOOK MOVIE</a>
       </mat-card-actions>
     </div>
   </div>

@@ -4,11 +4,12 @@ import { MovieService } from '../../../core/services/movie.service';
 import { MovieDetailInterface } from '../../../core/models/movie.models';
 import { DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-movie-detail',
   standalone: true,
-  imports: [MatCardModule, DatePipe, MatButtonModule],
+  imports: [MatCardModule, DatePipe, MatButtonModule, RouterLink],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.scss'
 })
