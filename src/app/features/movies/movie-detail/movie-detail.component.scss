@@ -1,29 +1,19 @@
-.mdc-card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* Añade bordes redondeados */
-  background-color: darkgrey;
-}
-
-.mat-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.mat-card img {
-  border-radius: 5px 5px 0 0; /* Redondea solo las esquinas superiores */
-  max-width: 100%;
-  height: auto;
-  display: block; /* Asegura que no haya espacio extra alrededor de la imagen */
-}
-
-.mat-card-content {
-  padding: 10px; /* Añade un poco de espacio dentro de la tarjeta */
-}
-
-.mdc-card__actions{
-  gap: 10px;
-}
-
-.mat-card-actions button:hover {
-  background-color: #005b4f; /* Color más oscuro al pasar el mouse */
+.movie-card{
+  padding: 20px;
+  background-color: black;
+  color: white;
+  .card-container{
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22.5rem), 1fr));
+    .card-image{
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .card-content{
+    }
+  }
 }
